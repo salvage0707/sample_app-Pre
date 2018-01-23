@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+#学習の追加gem
+#画像投稿用gem
+gem 'refile', require: 'refile/rails', github: 'manfe/refile'
+#画像加工用（サイズ調整など）gem
+gem 'refile-mini_magick'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -32,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
